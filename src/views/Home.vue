@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <AppDashboard msg="this id dashboard"/>
+    <app-panel msg="this id dashboard"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import AppDashboard from '@/components/AppDashboard.vue'
+import AppPanel from '../components/layout/AppPanel'
 
 export default {
   name: 'Home',
   components: {
-    AppDashboard
+    AppPanel
   }
 }
 </script>

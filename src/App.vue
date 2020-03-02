@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <app-header></app-header>
+    <hr>
     <router-view/>
     <app-footer></app-footer>
     <div id="click-to-top">

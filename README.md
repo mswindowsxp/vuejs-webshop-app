@@ -1,4 +1,4 @@
-# wehshop-app
+# WebShop-app
 
 ## Project setup
 ```
