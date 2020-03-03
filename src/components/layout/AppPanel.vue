@@ -35,7 +35,6 @@ export default {
   data () {
     return {
       settings: {
-        arrows: false,
         dots: true,
         infinite: true,
         slidesToShow: 1,
@@ -43,7 +42,8 @@ export default {
         autoplay: true,
         speed: 1000,
         autoplaySpeed: 8000,
-        cssEase: 'ease-in'
+        cssEase: 'linear',
+        fade: true
       }
     }
   },
@@ -56,7 +56,7 @@ export default {
 }
 </script>
 <style>
-.slider {
-  height: 500px
-}
+/*.slider {*/
+/*  height: 500px*/
+/*}*/
 </style>
