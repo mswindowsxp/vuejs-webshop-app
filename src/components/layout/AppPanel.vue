@@ -2,7 +2,7 @@
   <div class="hello">
     <section id="home-section" class="hero">
       <VueSlickCarousel v-bind="settings">
-        <div :style="{'background-image': 'url(' + require('../assets/images/bg_1.jpg') + ')'}" class="slider">
+        <div :style="{'background-image': 'url(' + require('@/assets/images/bg_1.jpg') + ')'}" class="slider">
           <div class="overlay"></div>
           <div class="container">
             <div class="col-md-12 text-center">
@@ -12,7 +12,7 @@
             </div>
           </div>
         </div>
-        <div :style="{'background-image': 'url(' + require('../assets/images/bg_2.jpg') + ')'}" class="slider">
+        <div :style="{'background-image': 'url(' + require('@/assets/images/bg_2.jpg') + ')'}" class="slider">
           <div class="overlay"></div>
           <div class="container">
 
@@ -41,7 +41,7 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 2000,
+        speed: 1000,
         autoplaySpeed: 8000,
         cssEase: 'ease-in'
       }

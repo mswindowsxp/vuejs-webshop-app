@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <hr>
     <router-view/>
+    <br>
     <app-footer></app-footer>
     <div id="click-to-top">
       <div class="mouse">
