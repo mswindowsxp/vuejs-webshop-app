@@ -174,7 +174,6 @@
     $('.ftco-animate').waypoint(function (direction) {
       if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
         i++
-
         $(this.element).addClass('item-animate')
         setTimeout(function () {
           $('body .ftco-animate.item-animate').each(function (k) {

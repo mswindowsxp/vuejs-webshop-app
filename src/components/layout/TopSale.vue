@@ -2,7 +2,7 @@
    <section class="ftco-section">
       <div class="container">
          <div class="row justify-content-center mb-3 pb-3">
-            <div class="col-md-12 heading-section text-center ftco-animate">
+            <div class="col-md-12 heading-section text-center fadeInUp">
                <span class="subheading">Sản phẩm bán chạy</span>
                <h2 class="mb-4">Sản phẩm bán chạy</h2>
                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
@@ -23,7 +23,7 @@
                   <div class="item-product-main">
                      <div class="product-thumnail">
                         <a class="image_thumb p_img" href="" title="">
-                           <img src="images/chessee.jpg">
+                           <img src="@/assets/images/chessee.jpg">
                         </a>
                      </div>
                      <div class="product-info">
@@ -649,6 +649,12 @@
 </template>
 <script>
 export default {
-  name: 'top-sale'
+  name: 'top-sale',
+  mounted () {
+    console.log('vo')
+  },
+  methods: {
+
+  }
 }
 </script>
