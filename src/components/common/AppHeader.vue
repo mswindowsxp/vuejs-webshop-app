@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">TY FOODS</a>
+         <router-link tag="a" to="/" class="navbar-brand">TY FOODS</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
@@ -15,11 +15,10 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
                  aria-expanded="false">Sản Phẩm</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="shop.html">Giấy ăn</a>
-                <a class="dropdown-item" href="wishlist.html">Ly giấy</a>
-                <a class="dropdown-item" href="product-single.html">Hộp nhựa</a>
-                <a class="dropdown-item" href="cart.html">Hải sản</a>
-                <a class="dropdown-item" href="checkout.html">Bột Làm Bánh</a>
+                 <router-link tag="a" to="/product-list/tissue" class="dropdown-item">Giấy Ăn</router-link>
+                 <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">Ly Giấy</router-link>
+                 <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">Hộp Nhựa</router-link>
+                 <router-link tag="a" to="/product-list/flour" class="dropdown-item">Bột Làm Bánh</router-link>
               </div>
             </li>
             <li class="nav-item"><a href="about.html" class="nav-link">Giới Thiệu</a></li>
