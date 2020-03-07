@@ -12,13 +12,13 @@
                   <div class="row product_slider slider">
                      <div>
                         <div class="product">
-                           <a href="#" class="img-prod">
+                           <router-link tag="a" class="img-prod" :to="{name: 'single-product', params: {id: index}}">
                               <img class="img-fluid" :src="`${item.src}${index}`" alt="Colorlib Template">
                               <div class="status-pro-top">
                                  <div class="ins-discount-percentage">{{item.salePercent}}%</div>
                               </div>
                               <div class="overlay"></div>
-                           </a>
+                           </router-link>
                            <div class="text py-3 pb-4 px-3 text-center">
                               <h3><a href="#">{{item.productName}}</a></h3>
                               <div class="d-flex">

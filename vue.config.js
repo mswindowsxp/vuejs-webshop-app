@@ -9,6 +9,5 @@ module.exports = {
         jQuery: 'jquery'
       })
     ]
-  },
-  publicPath: '/dat-handsome/'
+  }
 }

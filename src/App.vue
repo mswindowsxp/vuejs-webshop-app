@@ -1,31 +1,45 @@
 <template>
-  <div id="app">
-    <app-header></app-header>
-    <router-view/>
-    <br>
-    <app-footer></app-footer>
-    <div id="click-to-top">
-      <div class="mouse">
-        <a href="#" class="mouse-icon">
-          <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-        </a>
+   <div id="app goto-here">
+      <app-header></app-header>
+      <router-view/>
+      <br>
+      <app-footer></app-footer>
+      <div id="click-to-top">
+         <div class="mouse1">
+            <a href="#" class="mouse-icon">
+               <div class="mouse-wheel"><span class="icon-chat"></span></div>
+            </a>
+         </div>
+         <div class="mouse">
+            <a href="#" class="mouse-icon">
+               <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+            </a>
+         </div>
       </div>
-      <div class="mouse">
-        <a href="#" class="mouse-icon">
-          <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-        </a>
-      </div>
-    </div>
-  </div>
+   </div>
 </template>
 <script>
 import AppHeader from './components/common/AppHeader'
 import AppFooter from './components/common/AppFooter'
+
 export default {
   name: 'mainApp',
   components: {
     AppHeader,
     AppFooter
+  },
+  data () {
+    return {
+      data: this.$store.state.tempVal
+    }
+  },
+  methods: {
+    update () {
+    }
+  },
+  computed: {
+  },
+  created () {
   }
 }
 </script>

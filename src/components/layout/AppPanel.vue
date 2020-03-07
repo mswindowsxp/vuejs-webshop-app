@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       settings: {
-        dots: true,
+        // dots: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,

@@ -651,7 +651,6 @@
 export default {
   name: 'top-sale',
   mounted () {
-    console.log('vo')
   },
   methods: {
 
