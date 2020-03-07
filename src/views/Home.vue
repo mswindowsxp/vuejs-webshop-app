@@ -14,10 +14,18 @@
 export default {
   name: 'Home',
   components: {
-    AppPanel: () => import('@/components/layout/AppPanel'),
-    FavoriteList: () => import('@/components/layout/FavoriteList'),
-    TopSale: () => import('@/components/layout/TopSale'),
-    IntroduceOwner: () => import('@/components/layout/IntroduceOwner')
+    AppPanel: () => import(/* webpackChunkName: "panel" */'@/components/layout/AppPanel'),
+    FavoriteList: () => import(/* webpackChunkName: "favorite" */'@/components/layout/FavoriteList'),
+    TopSale: () => import(/* webpackChunkName: "top-sale" */'@/components/layout/TopSale'),
+    IntroduceOwner: () => import(/* webpackChunkName: "owner" */'@/components/layout/IntroduceOwner')
+  },
+  data () {
+    return {
+      isLoad: true
+    }
+  },
+  mounted () {
+    console.log('render ')
   }
 }
 </script>

@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import axios from 'axios'
 import JwtService from '@/common/jwt.service'
-import { API_URL } from '@/common/config'
 
 const CommonService = {
   init () {
     Vue.use(axios)
-    Vue.axios.default.baseURI = API_URL
+    // Vue.axios.default.baseURI = API_URL
   },
   setHeader () {
     Vue.axios.defaults.headers.common.Authorization = `Token ${JwtService.getToken()}`
@@ -20,6 +19,11 @@ const CommonService = {
 
   get (resource, slug = '') {
     return Vue.axios.get(`${resource}/${slug}`).catch(error => {
+      throw new Error(`[RWV] ApiService ${error}`)
+    })
+  },
+  getAll (resource) {
+    return axios.get(`${resource}`).catch(error => {
       throw new Error(`[RWV] ApiService ${error}`)
     })
   },

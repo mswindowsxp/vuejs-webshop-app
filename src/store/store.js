@@ -1,27 +1,34 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { ProductService } from '../common/product.service'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    tempVal: 0
+    productList: []
   },
   mutations: {
     incrementTest (state) {
       state.tempVal += 1
+    },
+    SET_PRODUCT_LIST: (state, payload) => {
+      state.productList = payload
     }
   },
   actions: {
-    updateTemp: context => {
-      context.commit('incrementTest')
+    FETCH_PRODUCT_LIST: async (context, payload) => {
+      const data = await ProductService.getListProduct()
+      console.log(data)
+      context.commit('SET_PRODUCT_LIST', data)
     }
   },
   modules: {
+
   },
   getters: {
-    getTest (state) {
-      return state.tempVal
+    GET_PRODUCT_LIST (state) {
+      return state.productList
     }
   }
 })

@@ -30,16 +30,18 @@ export default {
   },
   data () {
     return {
-      data: this.$store.state.tempVal
+      productList: []
     }
   },
   methods: {
-    update () {
-    }
   },
   computed: {
+    productLists () {
+      return this.$store.getters.GET_PRODUCT_LIST
+    }
   },
-  created () {
+  mounted () {
+    this.$store.dispatch('FETCH_PRODUCT_LIST')
   }
 }
 </script>
