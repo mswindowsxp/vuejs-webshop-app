@@ -2,12 +2,15 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { ProductService } from '../common/product.service'
 import createPersistedState from 'vuex-persistedstate'
+import createMutationsSharer from 'vuex-shared-mutations'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   plugins: [createPersistedState({
     paths: ['shopCart']
-  })],
+  }),
+  createMutationsSharer({ predicate: ['ADD_SHOP_CART', 'POP_ITEM_IN_CART'] })
+  ],
   state: {
     productList: [],
     shopCart: [

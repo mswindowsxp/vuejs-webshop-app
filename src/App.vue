@@ -11,9 +11,9 @@
             </a>
          </div>
          <div class="mouse">
-            <a href="#" class="mouse-icon">
+            <button @click="scrollToTop" class="mouse-icon">
                <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
-            </a>
+            </button>
          </div>
       </div>
    </div>
@@ -34,6 +34,10 @@ export default {
     }
   },
   methods: {
+    scrollToTop () {
+      document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+    }
   },
   computed: {
     productLists () {
