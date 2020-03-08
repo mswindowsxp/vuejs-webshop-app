@@ -40,7 +40,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    FETCH_PRODUCT_LIST: async (context, payload) => {
+    FETCH_PRODUCT_LIST: async (context) => {
       const data = await ProductService.getListProduct()
       context.commit('SET_PRODUCT_LIST', data)
     },
