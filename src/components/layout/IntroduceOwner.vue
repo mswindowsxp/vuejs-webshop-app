@@ -109,7 +109,8 @@ export default {
         autoplay: true,
         speed: 1000,
         autoplaySpeed: 5000,
-        cssEase: 'ease'
+        cssEase: 'ease',
+        arrows: false
       },
       logoPng: require('@/assets/images/logo.png')
     }

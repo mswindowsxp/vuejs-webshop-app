@@ -2,15 +2,15 @@
    <div class="home">
       <hr>
       <app-panel/>
-      <br>
-      <introduce-owner/>
-      <favorite-list/>
-      <top-sale/>
+        <br>
+        <introduce-owner/>
+        <favorite-list/>
+        <top-sale/>
    </div>
 </template>
 
 <script>
-
+import store from '../store/store'
 export default {
   name: 'Home',
   components: {
@@ -21,11 +21,15 @@ export default {
   },
   data () {
     return {
-      isLoad: true
+      idRemove: 0
     }
   },
-  mounted () {
-    console.log('render ')
+  methods: {
+    removeItem: (id) => {
+      console.log(id)
+      store.dispatch('REMOVE_ITEM_CART', id)
+      console.log(store.getters.GET_SHOP_CART)
+    }
   }
 }
 </script>

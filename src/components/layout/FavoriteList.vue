@@ -7,8 +7,8 @@
             </div>
          </div>
          <div class="container">
-         <vue-slick-carousel v-bind="settings">
-            <div v-for="(item, index) in productList" v-bind:key="index">
+            <vue-slick-carousel v-bind="settings">
+               <div v-for="(item, index) in productList" v-bind:key="index">
                   <div class="row product_slider slider">
                      <div>
                         <div class="product">
@@ -30,7 +30,7 @@
                               </div>
                               <div class="bottom-area d-flex px-3">
                                  <div class="m-auto d-flex">
-                                    <a href="#"
+                                    <a href="#" @click="addToCart(item)"
                                        class="add-to-cart d-flex justify-content-center align-items-center text-center">
                                        <span><i class="ion-ios-menu"></i></span>
                                     </a>
@@ -49,27 +49,64 @@
                      </div>
                   </div>
                </div>
-         </vue-slick-carousel>
+            </vue-slick-carousel>
          </div>
       </section>
    </div>
 </template>
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
+import store from '../../store/store'
 
 export default {
   name: 'favorite-list',
   components: {
     VueSlickCarousel
   },
+  methods: {
+    addToCart (item) {
+      console.log(item)
+      store.dispatch('ACC_ADD_SHOP_CART', item)
+    }
+  },
   data () {
     return {
       productList: [
-        { productName: 'P1', priceSale: '1000', priceRoot: '2000', src: 'https://picsum.photos/300/300?random=', salePercent: '10' },
-        { productName: 'P2', priceSale: '1000', priceRoot: '2000', src: 'https://picsum.photos/300/300?random=', salePercent: '15' },
-        { productName: 'P3', priceSale: '1000', priceRoot: '2000', src: 'https://picsum.photos/300/300?random=', salePercent: '20' },
-        { productName: 'P4', priceSale: '1000', priceRoot: '2000', src: 'https://picsum.photos/300/300?random=', salePercent: '25' },
-        { productName: 'P5', priceSale: '1000', priceRoot: '2000', src: 'https://picsum.photos/300/300?random=', salePercent: '30' }
+        {
+          productName: 'P1',
+          priceSale: '1000',
+          priceRoot: '2000',
+          src: 'https://picsum.photos/300/300?random=',
+          salePercent: '10'
+        },
+        {
+          productName: 'P2',
+          priceSale: '1000',
+          priceRoot: '2000',
+          src: 'https://picsum.photos/300/300?random=',
+          salePercent: '15'
+        },
+        {
+          productName: 'P3',
+          priceSale: '1000',
+          priceRoot: '2000',
+          src: 'https://picsum.photos/300/300?random=',
+          salePercent: '20'
+        },
+        {
+          productName: 'P4',
+          priceSale: '1000',
+          priceRoot: '2000',
+          src: 'https://picsum.photos/300/300?random=',
+          salePercent: '25'
+        },
+        {
+          productName: 'P5',
+          priceSale: '1000',
+          priceRoot: '2000',
+          src: 'https://picsum.photos/300/300?random=',
+          salePercent: '30'
+        }
       ],
       settings: {
         dots: true,
@@ -80,7 +117,9 @@ export default {
         slidesToShow: 4,
         slidesToScroll: 1,
         swipeToSlide: true,
-        autoplay: false,
+        autoplay: true,
+        lazyLoad: 'ondemand',
+        arrows: false,
         responsive: [
           {
             breakpoint: 1024,

@@ -12889,9 +12889,9 @@ h1, h2, h3, h4, h5,
     color: #000000;
 }
 
-.cart-list {
-    overflow-x: scroll;
-}
+/*.cart-list {*/
+/*    overflow-x: scroll;*/
+/*}*/
 
 .table {
     min-width: 1000px !important;
@@ -13433,57 +13433,57 @@ textarea.form-control {
   opacity: 0.8;
   transform: translateY(-50%) rotate(0deg);
 } */
-.slick-prev {
-    background: #62c0dc;
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    left: 15px;
-    z-index: 10;
-}
+/*.slick-prev {*/
+/*    background: #62c0dc;*/
+/*    padding: 10px;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    left: 15px;*/
+/*    z-index: 10;*/
+/*}*/
 
-.slick-prev::before {
-    content: "";
-    background: url('../images/btn_prev.png');
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 4px;
-    left: 3px;
-}
+/*.slick-prev::before {*/
+/*    content: "";*/
+/*    background: url('../images/btn_prev.png');*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    position: absolute;*/
+/*    top: 4px;*/
+/*    left: 3px;*/
+/*}*/
 
-.slick-next {
-    background: #62c0dc;
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    right: 13px;
-    z-index: 10;
-}
+/*.slick-next {*/
+/*    background: #62c0dc;*/
+/*    padding: 10px;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    right: 13px;*/
+/*    z-index: 10;*/
+/*}*/
 
-.slick-next::before {
-    content: "";
-    background: url('../images/btn_next.png');
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 4px;
-    left: 3px;
-}
+/*.slick-next::before {*/
+/*    content: "";*/
+/*    background: url('../images/btn_next.png');*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    position: absolute;*/
+/*    top: 4px;*/
+/*    left: 3px;*/
+/*}*/
 
-.slick-prev:hover, .slick-prev:focus {
-    background: #62c0dc;
-    transform: scale(1.1);
-    top: 45%;
-    left: 17px;
-}
+/*.slick-prev:hover, .slick-prev:focus {*/
+/*    background: #62c0dc;*/
+/*    transform: scale(1.1);*/
+/*    top: 45%;*/
+/*    left: 17px;*/
+/*}*/
 
-.slick-next:hover, .slick-next:focus {
-    background: #62c0dc;
-    transform: scale(1.1);
-    top: 45%;
-    right: 15px;
-}
+/*.slick-next:hover, .slick-next:focus {*/
+/*    background: #62c0dc;*/
+/*    transform: scale(1.1);*/
+/*    top: 45%;*/
+/*    right: 15px;*/
+/*}*/
 
 .ftco-no-pt {
     padding-top: 0 !important;

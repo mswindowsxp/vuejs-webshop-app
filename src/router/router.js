@@ -22,6 +22,11 @@ const routes = [
     props: true
   },
   {
+    path: '/cart',
+    name: 'shop-cart',
+    component: () => import(/* webpackChunkName: "shop-cart */ '../components/layout/ShopCart')
+  },
+  {
     path: '*',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */'../components/common/AppError')
