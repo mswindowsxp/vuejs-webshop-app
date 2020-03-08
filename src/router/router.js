@@ -27,7 +27,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "shop-cart */ '../components/layout/ShopCart')
   },
   {
-    path: '*',
+    path: '**',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */'../components/common/AppError')
   }
