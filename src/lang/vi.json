@@ -1,0 +1,13 @@
+{
+  "home": "Trang Chủ",
+  "product": "Sản Phẩm",
+  "sub-product": {
+    "tissue": "Giấy Ăn",
+    "paper-cup": "Ly Giấy",
+    "bottle-plastic": "Hộp Nhựa",
+    "flour" : "Bột Làm Bánh"
+  },
+  "introduce": "Giới Thiệu",
+  "news": "Tin Tức",
+  "contact" : "Liên Hệ"
+}

@@ -1,0 +1,13 @@
+{
+  "home": "Home",
+  "product": "Product",
+  "sub-product": {
+    "tissue": "Tissue",
+    "paper-cup": "Paper Cup",
+    "bottle-plastic": "Bottle Plastic",
+    "flour" : "flour"
+  },
+  "introduce": "Introduce",
+  "news": "News",
+  "contact" : "Contact"
+}

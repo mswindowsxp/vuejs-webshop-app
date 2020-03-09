@@ -1,64 +1,86 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container-fluid">
+   <div>
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+         <div class="container-fluid">
             <router-link tag="a" to="/" class="navbar-brand">TY FOODS</router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                     aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
+               <span class="oi oi-menu"></span> Menu
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Trang Chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
-                           aria-haspopup="true"
-                           aria-expanded="false">Sản Phẩm</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <router-link tag="a" to="/product-list/tissue" class="dropdown-item">Giấy Ăn</router-link>
-                            <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">Ly Giấy
-                            </router-link>
-                            <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">Hộp Nhựa
-                            </router-link>
-                            <router-link tag="a" to="/product-list/flour" class="dropdown-item">Bột Làm Bánh
-                            </router-link>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Giới Thiệu</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Tin tức & Sự kiện</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Liên Hệ</a></li>
-                    <li class="nav-item">
-                        <router-link tag="a" class="nav-link icon-shopping_cart" to="/cart">
-                            [{{shopCartSize}}]
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"><a href="index.html" class="nav-link">{{ $t("home") }}</a></li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">{{ $t("product") }}</a>
+                     <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <router-link tag="a" to="/product-list/tissue" class="dropdown-item">{{ $t("sub-product.tissue") }}</router-link>
+                        <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">{{ $t("sub-product.paper-cup") }}
                         </router-link>
-                    </li>
+                        <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">{{ $t("sub-product.bottle-plastic") }}
+                        </router-link>
+                        <router-link tag="a" to="/product-list/flour" class="dropdown-item">{{ $t("sub-product.flour")}}
+                        </router-link>
+                     </div>
+                  </li>
+                  <li class="nav-item"><a href="about.html" class="nav-link">{{$t("introduce")}}</a></li>
+                  <li class="nav-item"><a href="blog.html" class="nav-link">{{$t("news")}}</a></li>
+                  <li class="nav-item"><a href="contact.html" class="nav-link">{{$t("contact")}}</a></li>
+                  <li class="nav-item">
+                     <router-link tag="a" class="nav-link icon-shopping_cart" to="/cart">
+                        [{{shopCartSize}}]
+                     </router-link>
+                  </li>
 
-                </ul>
+               </ul>
             </div>
             <div class="search-top">
-                <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                        <input type="text" class="form-control">
-                        <input type="submit" value="" class="submit submit-search px-3"><span
-                            class="icon-search"></span>
-                    </div>
-                </form>
+               <form action="#" class="subscribe-form">
+                  <div class="form-group d-flex">
+                     <input type="text" class="form-control">
+                     <input type="submit" value="" class="submit submit-search px-3"><span
+                     class="icon-search"></span>
+                  </div>
+               </form>
             </div>
-        </div>
-    </nav>
+         </div>
+      </nav>
+      <select v-model="langSelected">
+         <option  v-for="lang in optionLangs" :key="lang.value" :value="lang.value">{{ lang.text }}</option>
+      </select>
+   </div>
 
 </template>
 <script>
+import store from '../../store/store'
 export default {
   name: 'app-header',
   data () {
     return {
-      shopCart: this.$store.getters.GET_SHOP_CART_SIZE
+      shopCart: this.$store.getters.GET_SHOP_CART_SIZE,
+      optionLangs: [
+        {
+          text: 'Vietnamese',
+          value: 'vi'
+        },
+        {
+          text: 'English',
+          value: 'en'
+        }
+      ],
+      langSelected: 'vi'
     }
   },
   computed: {
     shopCartSize () {
       return this.$store.getters.GET_SHOP_CART_SIZE
+    }
+  },
+  watch: {
+    langSelected: (val) => {
+      store.dispatch('UPDATE_LANG', val)
     }
   }
 }

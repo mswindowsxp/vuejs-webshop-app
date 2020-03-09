@@ -6,13 +6,17 @@ import './assets/style.scss'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import VueCookies from 'vue-cookies'
+import i18n from './lang/i18n'
 
 Vue.use(VueCookies)
 
 Vue.config.productionTip = false
 
-new Vue({
+const app = new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
+
+export default app

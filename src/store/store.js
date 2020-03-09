@@ -5,6 +5,8 @@ import createPersistedState from 'vuex-persistedstate'
 import createMutationsSharer from 'vuex-shared-mutations'
 import Cookies from 'vue-cookies'
 
+import app from '../main'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -41,6 +43,9 @@ export default new Vuex.Store({
         }).indexOf(payload)
         state.shopCart.splice(indexRemove, 1)
       }
+    },
+    SET_LANG: (state, payload) => {
+      app.$i18n.locale = payload
     }
   },
   actions: {
@@ -53,6 +58,9 @@ export default new Vuex.Store({
     },
     REMOVE_ITEM_CART: async (context, payload) => {
       context.commit('POP_ITEM_IN_CART', payload)
+    },
+    UPDATE_LANG: ({ commit }, payload) => {
+      commit('SET_LANG', payload)
     }
   },
   modules: {
