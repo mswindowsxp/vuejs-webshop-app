@@ -65,7 +65,6 @@ export default {
   },
   methods: {
     addToCart (item) {
-      console.log(item)
       store.dispatch('ACC_ADD_SHOP_CART', item)
     }
   },

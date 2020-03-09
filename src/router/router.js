@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/cart',
     name: 'shop-cart',
-    component: () => import(/* webpackChunkName: "shop-cart */ '../components/layout/ShopCart')
+    component: () => import(/* webpackChunkName: "shop-cart" */ '../components/layout/ShopCart')
   },
   {
     path: '**',
@@ -40,5 +40,11 @@ const router = new VueRouter({
     return { x: 0, y: 0 }
   }
 })
-
+router.beforeEach((to, from, next) => {
+  if (!to.matched.length) {
+    next('**')
+  } else {
+    next()
+  }
+})
 export default router

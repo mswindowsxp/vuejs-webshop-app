@@ -3,20 +3,24 @@ import Vuex from 'vuex'
 import { ProductService } from '../common/product.service'
 import createPersistedState from 'vuex-persistedstate'
 import createMutationsSharer from 'vuex-shared-mutations'
+import Cookies from 'vue-cookies'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   plugins: [createPersistedState({
-    paths: ['shopCart']
+    storage: {
+      getItem: key => Cookies.get(key),
+      setItem: (key, value) => Cookies.set(key, value, { expires: 1, secure: false, domain: `.${window.location.hostname}` }),
+      removeItem: key => Cookies.remove(key)
+    },
+    paths: ['productList']
   }),
   createMutationsSharer({ predicate: ['ADD_SHOP_CART', 'POP_ITEM_IN_CART'] })
   ],
   state: {
     productList: [],
-    shopCart: [
-      { id: 2, productName: 'P1', priceSale: '5000', priceRoot: '6000', src: 'https://picsum.photos/300/300?random=', salePercent: '10' },
-      { id: 1, productName: 'P2', priceSale: '1000', priceRoot: '2000', src: 'https://picsum.photos/300/300?random=', salePercent: '15' }
-    ]
+    shopCart: []
   },
   mutations: {
     incrementTest (state) {
