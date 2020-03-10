@@ -3,8 +3,8 @@
       <div class="container">
          <div class="row justify-content-center mb-3 pb-3">
             <div class="col-md-12 heading-section text-center fadeInUp">
-               <span class="subheading">Sản phẩm bán chạy</span>
-               <h2 class="mb-4">Sản phẩm bán chạy</h2>
+               <span class="subheading">{{$t("topSales")}}</span>
+               <h2 class="mb-4">{{$t("topSales")}}</h2>
                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
             </div>
          </div>
@@ -12,9 +12,9 @@
       <div class="container">
          <div class="row title-product">
             <div class="title_chir">
-               <h2>Ly nhựa</h2>
+               <h2>{{$t("sub-product.tissue")}}</h2>
             </div>
-            <div class="total-pro"><a href="#">Xem tất cả <img src="@/assets/images/next.png" alt="">
+            <div class="total-pro"><a href="#">{{$t("loadMore")}}  <img src="@/assets/images/next.png" alt="">
             </a></div>
          </div>
          <div class="row product_tabs_slide">

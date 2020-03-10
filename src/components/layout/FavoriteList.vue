@@ -3,7 +3,7 @@
       <section class="ftco-section">
          <div class="row justify-content-center mb-3 pb-3">
             <div class="col-md-12 heading-section text-center">
-               <h2 class="mb-4">Top yêu thích</h2>
+               <h2 class="mb-4">{{$t("favorites")}}</h2>
             </div>
          </div>
          <div class="container">
@@ -30,15 +30,15 @@
                               </div>
                               <div class="bottom-area d-flex px-3">
                                  <div class="m-auto d-flex">
-                                    <a href="#" @click="addToCart(item)"
+                                    <a href="javascript:void(0)" @click="addToCart(item)"
                                        class="add-to-cart d-flex justify-content-center align-items-center text-center">
                                        <span><i class="ion-ios-menu"></i></span>
                                     </a>
-                                    <a href="#"
+                                    <a href="javascript:void(0)"
                                        class="buy-now d-flex justify-content-center align-items-center mx-1">
                                        <span><i class="ion-ios-cart"></i></span>
                                     </a>
-                                    <a href="#"
+                                    <a href="javascript:void(0)"
                                        class="heart d-flex justify-content-center align-items-center ">
                                        <span><i class="ion-ios-heart"></i></span>
                                     </a>

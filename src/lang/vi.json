@@ -1,6 +1,8 @@
 {
   "home": "Trang Chủ",
   "product": "Sản Phẩm",
+  "partner": "Đối Tác Thương Hiệu",
+  "login": "Đăng Nhập",
   "sub-product": {
     "tissue": "Giấy Ăn",
     "paper-cup": "Ly Giấy",
@@ -9,5 +11,10 @@
   },
   "introduce": "Giới Thiệu",
   "news": "Tin Tức",
-  "contact" : "Liên Hệ"
+  "contact" : "Liên Hệ",
+  "signIn": "Đăng Nhập",
+  "signUp": "Đặng Ký",
+  "topSales": "Sản Phẩm Bán Chạy",
+  "favorites": "Danh Sách Yêu Thích",
+  "loadMore": "Xem Tất Cả"
 }

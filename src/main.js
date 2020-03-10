@@ -7,8 +7,13 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import VueCookies from 'vue-cookies'
 import i18n from './lang/i18n'
+import VueJSModal from 'vue-js-modal'
 
 Vue.use(VueCookies)
+Vue.use(VueJSModal, {
+  dialog: true,
+  dynamic: true
+})
 
 Vue.config.productionTip = false
 

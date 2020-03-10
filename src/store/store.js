@@ -25,9 +25,7 @@ export default new Vuex.Store({
     shopCart: []
   },
   mutations: {
-    incrementTest (state) {
-      state.tempVal += 1
-    },
+    // ---------PRODUCT - CART ------------ //
     SET_PRODUCT_LIST: (state, payload) => {
       state.productList = payload
     },
@@ -44,11 +42,14 @@ export default new Vuex.Store({
         state.shopCart.splice(indexRemove, 1)
       }
     },
+    // ---------SET LANGUAGE------------ //
     SET_LANG: (state, payload) => {
       app.$i18n.locale = payload
     }
+    // ---------USER - TOKEN------------ //
   },
   actions: {
+    // ---------PRODUCT - CART ------------ //
     FETCH_PRODUCT_LIST: async (context) => {
       const data = await ProductService.getListProduct()
       context.commit('SET_PRODUCT_LIST', data)
@@ -59,9 +60,14 @@ export default new Vuex.Store({
     REMOVE_ITEM_CART: async (context, payload) => {
       context.commit('POP_ITEM_IN_CART', payload)
     },
+
+    // ---------SET LANGUAGE------------ //
     UPDATE_LANG: ({ commit }, payload) => {
       commit('SET_LANG', payload)
     }
+
+    // ---------USER - TOKEN------------ //
+    //  LOGIN: async
   },
   modules: {
 

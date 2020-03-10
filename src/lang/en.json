@@ -1,6 +1,8 @@
 {
   "home": "Home",
   "product": "Product",
+  "partner": "partner",
+  "login": "login",
   "sub-product": {
     "tissue": "Tissue",
     "paper-cup": "Paper Cup",
@@ -9,5 +11,10 @@
   },
   "introduce": "Introduce",
   "news": "News",
-  "contact" : "Contact"
+  "contact" : "Contact",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "topSales": "Top Sales",
+  "favorites": "Favorite Products",
+  "loadMore": "All"
 }

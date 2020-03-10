@@ -10,30 +10,37 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active"><a href="index.html" class="nav-link">{{ $t("home") }}</a></li>
+                  <li class="nav-item active"><router-link class="nav-link" tag="a" to="/">{{ $t("home") }}</router-link> </li>
                   <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                         aria-haspopup="true"
-                        aria-expanded="false">{{ $t("product") }}</a>
+                        aria-expanded="false">{{ $t('product') }}</a>
                      <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <router-link tag="a" to="/product-list/tissue" class="dropdown-item">{{ $t("sub-product.tissue") }}</router-link>
-                        <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">{{ $t("sub-product.paper-cup") }}
+                        <router-link tag="a" to="/product-list/tissue" class="dropdown-item">{{ $t('sub-product.tissue') }}
                         </router-link>
-                        <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">{{ $t("sub-product.bottle-plastic") }}
+                        <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">{{ $t('sub-product.paper-cup') }}
                         </router-link>
-                        <router-link tag="a" to="/product-list/flour" class="dropdown-item">{{ $t("sub-product.flour")}}
+                        <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">{{ $t('sub-product.bottle-plastic') }}
+                        </router-link>
+                        <router-link tag="a" to="/product-list/flour" class="dropdown-item">{{ $t('sub-product.flour')}}
                         </router-link>
                      </div>
                   </li>
-                  <li class="nav-item"><a href="about.html" class="nav-link">{{$t("introduce")}}</a></li>
-                  <li class="nav-item"><a href="blog.html" class="nav-link">{{$t("news")}}</a></li>
-                  <li class="nav-item"><a href="contact.html" class="nav-link">{{$t("contact")}}</a></li>
+                  <li class="nav-item"><a href="about.html" class="nav-link">{{$t('partner')}}</a></li>
+                  <li class="nav-item"><a href="blog.html" class="nav-link">{{$t('news')}}</a></li>
+                  <li class="nav-item"><a href="contact.html" class="nav-link">{{$t('contact')}}</a></li>
                   <li class="nav-item">
-                     <router-link tag="a" class="nav-link icon-shopping_cart" to="/cart">
-                        [{{shopCartSize}}]
-                     </router-link>
+                     <a href="javascript:void(0)" class="nav-link" @click="loginOrSignUp">  {{$t("login")}}</a>
                   </li>
-
+                  <li class="nav-item">
+                     <router-link tag="a" class="nav-link icon-shopping_cart" to="/cart">[{{shopCartSize}}]</router-link>
+                  </li>
+                  <li class="nav-item dropdown-header">
+                     <select v-model="langSelected">
+                        <option v-for="lang in optionLangs" :key="lang.value" :value="lang.value">{{ lang.text }}
+                        </option>
+                     </select>
+                  </li>
                </ul>
             </div>
             <div class="search-top">
@@ -47,14 +54,14 @@
             </div>
          </div>
       </nav>
-      <select v-model="langSelected">
-         <option  v-for="lang in optionLangs" :key="lang.value" :value="lang.value">{{ lang.text }}</option>
-      </select>
+      <modal-sign-in-up></modal-sign-in-up>
    </div>
 
 </template>
 <script>
 import store from '../../store/store'
+import ModalSignInUp from './ModalSignInUp'
+
 export default {
   name: 'app-header',
   data () {
@@ -73,6 +80,9 @@ export default {
       langSelected: 'vi'
     }
   },
+  components: {
+    ModalSignInUp
+  },
   computed: {
     shopCartSize () {
       return this.$store.getters.GET_SHOP_CART_SIZE
@@ -82,29 +92,46 @@ export default {
     langSelected: (val) => {
       store.dispatch('UPDATE_LANG', val)
     }
+  },
+  methods: {
+    loginOrSignUp: function login () {
+      this.$modal.show('demo-login')
+    }
   }
 }
 </script>
 
 <style lang="scss">
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
+   #app {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+   }
 
-    #nav {
-        padding: 30px;
+   #nav {
+      padding: 30px;
 
-        a {
-            font-weight: bold;
-            color: #2c3e50;
+      a {
+         font-weight: bold;
+         color: #2c3e50;
 
-            &.router-link-exact-active {
-                color: #42b983;
-            }
-        }
-    }
+         &.router-link-exact-active {
+            color: #42b983;
+         }
+      }
+   }
+
+   select {
+      background-color: #0e0101;
+      color: white;
+      padding: 12px;
+      width: 130px;
+      border: none;
+      font-size: 20px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      -webkit-appearance: button;
+      outline: none;
+   }
 </style>
