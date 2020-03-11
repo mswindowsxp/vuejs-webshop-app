@@ -131,14 +131,12 @@ export default {
       $(this).find('.option').toggle()
     })
     $('.subscribe-form .form-group').click(function (e) {
-      // eslint-disable-next-line no-undef
-      if (_w <= 1024) {
+      if (window.width <= 1024) {
         $('#searchform-header-replace').addClass('show')
       }
     })
     $('#searchform-header-replace-close').click(function (e) {
-      // eslint-disable-next-line no-undef
-      if (_w <= 1024) {
+      if (window.width <= 1024) {
         $('#searchform-header-replace').removeClass('show')
       }
     })
