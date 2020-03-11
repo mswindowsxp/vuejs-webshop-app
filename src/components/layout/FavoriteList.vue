@@ -2,7 +2,7 @@
    <div id="favorite-list">
       <section class="ftco-section">
          <div class="row justify-content-center mb-3 pb-3">
-            <div class="col-md-12 heading-section text-center">
+            <div class="col-md-12 heading-section text-center" data-aos="zoom-out-up" data-aos-easing="linear" data-aos-duration="500">
                <h2 class="mb-4">{{$t("favorites")}}</h2>
             </div>
          </div>

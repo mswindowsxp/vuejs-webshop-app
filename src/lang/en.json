@@ -16,5 +16,7 @@
   "signUp": "Sign Up",
   "topSales": "Top Sales",
   "favorites": "Favorite Products",
-  "loadMore": "All"
+  "loadMore": "All",
+  "vietnamese": "Vietnamese",
+  "english" : "English"
 }

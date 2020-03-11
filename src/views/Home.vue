@@ -5,6 +5,7 @@
         <introduce-owner/>
         <favorite-list/>
         <top-sale/>
+      <categoryblah/>
    </div>
 </template>
 
@@ -16,7 +17,8 @@ export default {
     AppPanel: () => import(/* webpackChunkName: "panel" */'@/components/layout/AppPanel'),
     FavoriteList: () => import(/* webpackChunkName: "favorite" */'@/components/layout/FavoriteList'),
     TopSale: () => import(/* webpackChunkName: "top-sale" */'@/components/layout/TopSale'),
-    IntroduceOwner: () => import(/* webpackChunkName: "owner" */'@/components/layout/IntroduceOwner')
+    IntroduceOwner: () => import(/* webpackChunkName: "owner" */'@/components/layout/IntroduceOwner'),
+    Categoryblah: () => import(/* webpackChinkName: "category" */ '@/components/layout/CategoryBlahBlah')
   },
   data () {
     return {

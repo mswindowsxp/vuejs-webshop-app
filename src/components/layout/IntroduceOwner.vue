@@ -1,9 +1,11 @@
 <template>
    <section class="ftco-section testimony-section">
-      <div class="container">
+      <div class="container" data-aos="fade-up"
+           data-aos-easing="linear"
+           data-aos-duration="1000">
 
          <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-4 heading-section text-center logo-intro">
+            <div class="col-md-4 heading-section text-center logo-intro" >
                <img :src="logoPng" alt="">
             </div>
             <div class="col-md-8 heading-section  text-center">

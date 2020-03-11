@@ -10,7 +10,9 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active"><router-link class="nav-link" tag="a" to="/">{{ $t("home") }}</router-link> </li>
+                  <li class="nav-item active">
+                     <router-link class="nav-link" tag="a" to="/">{{ $t('home') }}</router-link>
+                  </li>
                   <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                         aria-haspopup="true"
@@ -30,16 +32,11 @@
                   <li class="nav-item"><a href="blog.html" class="nav-link">{{$t('news')}}</a></li>
                   <li class="nav-item"><a href="contact.html" class="nav-link">{{$t('contact')}}</a></li>
                   <li class="nav-item">
-                     <a href="javascript:void(0)" class="nav-link" @click="loginOrSignUp">  {{$t("login")}}</a>
+                     <a href="javascript:void(0)" class="nav-link" @click="loginOrSignUp"> {{$t('login')}}</a>
                   </li>
                   <li class="nav-item">
-                     <router-link tag="a" class="nav-link icon-shopping_cart" to="/cart">[{{shopCartSize}}]</router-link>
-                  </li>
-                  <li class="nav-item dropdown-header">
-                     <select v-model="langSelected">
-                        <option v-for="lang in optionLangs" :key="lang.value" :value="lang.value">{{ lang.text }}
-                        </option>
-                     </select>
+                     <router-link tag="a" class="nav-link icon-shopping_cart" to="/cart">[{{shopCartSize}}]
+                     </router-link>
                   </li>
                </ul>
             </div>
@@ -47,10 +44,35 @@
                <form action="#" class="subscribe-form">
                   <div class="form-group d-flex">
                      <input type="text" class="form-control">
-                     <input type="submit" value="" class="submit submit-search px-3"><span
-                     class="icon-search"></span>
+                     <input type="submit" value="" class="submit submit-search px-3"><span class="icon-search"></span>
                   </div>
                </form>
+            </div>
+            <div class="translate" >
+               <div v-if="langSelected === 'vi'">
+                  <img :src="require('@/assets/images/vi.png')" alt="">
+               </div>
+               <div v-else>
+                  <img :src="require('@/assets/images/en.png')" alt="">
+               </div>
+               <ul class="option">
+                  <li class="lang" @click="changeLang('vi')">
+                     {{ $t('vietnamese') }}
+                  </li>
+                  <li class="lang" @click="changeLang('en')">
+                     {{ $t('english') }}
+                  </li>
+               </ul>
+            </div>
+            <div id="searchform-header-replace" class="header-searchform-wrap"
+                 data-placeholder="Type then hit enter to search...">
+               <form action="" method="get" class="searchform">
+                  <label>
+                     <input type="text" class="field" placeholder="Type then hit enter to search...">
+                  </label>
+                  <input type="submit" value="" class="submit submit-search px-3">
+               </form>
+               <span id="searchform-header-replace-close">x</span>
             </div>
          </div>
       </nav>
@@ -61,6 +83,7 @@
 <script>
 import store from '../../store/store'
 import ModalSignInUp from './ModalSignInUp'
+import $ from 'jquery'
 
 export default {
   name: 'app-header',
@@ -96,7 +119,29 @@ export default {
   methods: {
     loginOrSignUp: function login () {
       this.$modal.show('demo-login')
+    },
+    changeLang: function (val) {
+      this.langSelected = val
+      store.dispatch('UPDATE_LANG', val)
     }
+  },
+  mounted () {
+    $('.translate>.option').hide()
+    $('.translate').click(function (e) {
+      $(this).find('.option').toggle()
+    })
+    $('.subscribe-form .form-group').click(function (e) {
+      // eslint-disable-next-line no-undef
+      if (_w <= 1024) {
+        $('#searchform-header-replace').addClass('show')
+      }
+    })
+    $('#searchform-header-replace-close').click(function (e) {
+      // eslint-disable-next-line no-undef
+      if (_w <= 1024) {
+        $('#searchform-header-replace').removeClass('show')
+      }
+    })
   }
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
    <section class="ftco-section">
-      <div class="container">
+      <div class="container" data-aos="fade-up"
+           data-aos-duration="1200">
          <div class="row justify-content-center mb-3 pb-3">
             <div class="col-md-12 heading-section text-center fadeInUp">
                <span class="subheading">{{$t("topSales")}}</span>
