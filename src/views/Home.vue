@@ -1,6 +1,6 @@
 <template>
    <div class="home">
-      <app-panel/>
+      <app-baner/>
         <br>
         <introduce-owner/>
         <favorite-list/>
@@ -14,7 +14,7 @@ import store from '../store/store'
 export default {
   name: 'Home',
   components: {
-    AppPanel: () => import(/* webpackChunkName: "panel" */'@/components/layout/AppPanel'),
+    AppBaner: () => import(/* webpackChunkName: "panel" */'@/components/layout/AppBanner'),
     FavoriteList: () => import(/* webpackChunkName: "favorite" */'@/components/layout/FavoriteList'),
     TopSale: () => import(/* webpackChunkName: "top-sale" */'@/components/layout/TopSale'),
     IntroduceOwner: () => import(/* webpackChunkName: "owner" */'@/components/layout/IntroduceOwner'),
