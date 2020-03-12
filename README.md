@@ -1,6 +1,13 @@
-# WebShop-app
+# PY Foo
+```
+Please install node before coming to next step
+https://nodejs.org/en/download/
+```
 
 ## Project setup
+```
+npm install -g @vue/cli
+```
 ```
 npm install
 ```
@@ -22,3 +29,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+### @DatVm

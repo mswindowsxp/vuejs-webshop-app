@@ -434,6 +434,7 @@
    </div>
 </template>
 <script>
+import $ from 'jquery'
 export default {
   name: 'product-list-info',
   watch: {
@@ -451,6 +452,14 @@ export default {
     test (name) {
       this.name = name
     }
+  },
+  mounted () {
+    $('.submenu-2-level>li').hide()
+    $('.menu-2-level>li').click(function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      $(this).find('.submenu-2-level>li').toggle()
+    })
   },
   created () {
   }
