@@ -1,6 +1,7 @@
 <template>
    <div id="app goto-here">
-      <app-header></app-header>
+      <app-header v-if="!activeHeaderVer2"></app-header>
+      <app-header-ver2 v-if="activeHeaderVer2"></app-header-ver2>
       <router-view/>
       <br>
       <app-footer></app-footer>
@@ -21,10 +22,12 @@
 <script>
 import AppHeader from './components/common/AppHeader'
 import AppFooter from './components/common/AppFooter'
+import AppHeaderVer2 from './components/common/AppHeaderVer2'
 
 export default {
   name: 'mainApp',
   components: {
+    AppHeaderVer2,
     AppHeader,
     AppFooter
   },
@@ -40,10 +43,11 @@ export default {
     }
   },
   computed: {
-    productLists () {
-      return this.$store.getters.GET_PRODUCT_LIST
+    activeHeaderVer2 () {
+      return this.$store.getters.GET_HEADER_STATUS
     }
   },
+
   mounted () {
     this.$store.dispatch('FETCH_PRODUCT_LIST')
   }

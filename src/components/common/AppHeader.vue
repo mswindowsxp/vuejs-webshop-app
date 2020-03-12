@@ -14,15 +14,19 @@
                      <router-link class="nav-link" tag="a" to="/">{{ $t('home') }}</router-link>
                   </li>
                   <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                     <a class="nav-link dropdown-toggle" href="javascript: void(0)" id="dropdown04"
+                        data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false">{{ $t('product') }}</a>
                      <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <router-link tag="a" to="/product-list/tissue" class="dropdown-item">{{ $t('sub-product.tissue') }}
+                        <router-link tag="a" to="/product-list/tissue" class="dropdown-item">{{ $t('sub-product.tissue')
+                           }}
                         </router-link>
-                        <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">{{ $t('sub-product.paper-cup') }}
+                        <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">{{
+                           $t('sub-product.paper-cup') }}
                         </router-link>
-                        <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">{{ $t('sub-product.bottle-plastic') }}
+                        <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">{{
+                           $t('sub-product.bottle-plastic') }}
                         </router-link>
                         <router-link tag="a" to="/product-list/flour" class="dropdown-item">{{ $t('sub-product.flour')}}
                         </router-link>
@@ -48,7 +52,7 @@
                   </div>
                </form>
             </div>
-            <div class="translate" >
+            <div class="translate">
                <div v-if="langSelected === 'vi'">
                   <img :src="require('@/assets/images/vi.png')" alt="">
                </div>
@@ -78,7 +82,6 @@
       </nav>
       <modal-sign-in-up></modal-sign-in-up>
    </div>
-
 </template>
 <script>
 import store from '../../store/store'

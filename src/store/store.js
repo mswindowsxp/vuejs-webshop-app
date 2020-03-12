@@ -22,7 +22,8 @@ export default new Vuex.Store({
   ],
   state: {
     productList: [],
-    shopCart: []
+    shopCart: [],
+    activeHeaderVer2: false
   },
   mutations: {
     // ---------PRODUCT - CART ------------ //
@@ -45,8 +46,11 @@ export default new Vuex.Store({
     // ---------SET LANGUAGE------------ //
     SET_LANG: (state, payload) => {
       app.$i18n.locale = payload
+    },
+    // ---------ACTIVE HEADER VER 2------------ //
+    ACTIVE_HEADER: (state, payload) => {
+      state.activeHeaderVer2 = payload
     }
-    // ---------USER - TOKEN------------ //
   },
   actions: {
     // ---------PRODUCT - CART ------------ //
@@ -64,10 +68,12 @@ export default new Vuex.Store({
     // ---------SET LANGUAGE------------ //
     UPDATE_LANG: ({ commit }, payload) => {
       commit('SET_LANG', payload)
-    }
+    },
 
-    // ---------USER - TOKEN------------ //
-    //  LOGIN: async
+    // ---------ACTIVE HEADER VER 2------------ //
+    ON_OFF_HEADER_VER2: ({ commit }, payload) => {
+      commit('ACTIVE_HEADER', payload)
+    }
   },
   modules: {
 
@@ -84,6 +90,9 @@ export default new Vuex.Store({
      */
     GET_SHOP_CART_SIZE (state) {
       return state.shopCart.length
+    },
+    GET_HEADER_STATUS (state) {
+      return state.activeHeaderVer2
     }
   }
 })

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/store'
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,12 @@ const router = new VueRouter({
   }
 })
 router.beforeEach((to, from, next) => {
+  if (to.fullPath.includes('/product-list')) {
+    store.dispatch('ON_OFF_HEADER_VER2', true)
+  } else {
+    store.dispatch('ON_OFF_HEADER_VER2', false)
+  }
+
   if (!to.matched.length) {
     next('**')
   } else {

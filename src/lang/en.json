@@ -18,5 +18,9 @@
   "favorites": "Favorite Products",
   "loadMore": "All",
   "vietnamese": "Vietnamese",
-  "english" : "English"
+  "english" : "English",
+  "new-item": "New",
+  "top-sale": "Top Sale",
+  "low-price": "Low Price",
+  "high-price": "High Price"
 }

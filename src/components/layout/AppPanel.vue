@@ -4,7 +4,7 @@
       <VueSlickCarousel v-bind="settings">
         <div :style="{'background-image': 'url(' + require('@/assets/images/bg_1.jpg') + ')'}" class="slider-item" data-aos="fade-down"
              data-aos-easing="linear"
-             data-aos-duration="1500">
+             data-aos-duration="800">
           <div class="overlay"></div>
           <div class="container">
             <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -20,7 +20,7 @@
         </div>
         <div :style="{'background-image': 'url(' + require('@/assets/images/bg_2.jpg') + ')'}" class="slider-item" data-aos="fade-down"
              data-aos-easing="linear"
-             data-aos-duration="1500">
+             data-aos-duration="800">
           <div class="overlay"></div>
           <div class="container">
             <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">

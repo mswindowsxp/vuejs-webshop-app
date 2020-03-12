@@ -18,5 +18,9 @@
   "favorites": "Danh Sách Yêu Thích",
   "loadMore": "Xem Tất Cả",
   "vietnamese": "Tiếng Việt",
-  "english" : "Tiếng Anh"
+  "english" : "Tiếng Anh",
+  "new-item": "Hàng Mới",
+  "top-sale": "Bán Chạy",
+  "low-price": "Giá Thấp",
+  "high-price": "Giá Cao"
 }

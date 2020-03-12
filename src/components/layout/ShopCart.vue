@@ -100,7 +100,13 @@ export default {
   methods: {
     removeItemInCart (id) {
       store.dispatch('REMOVE_ITEM_CART', id)
+    },
+    changeHeader: () => {
+      // store.dispatch('ON_OFF_HEADER_VER2', true)
     }
+  },
+  created () {
+    this.changeHeader()
   },
   mounted () {
   }
