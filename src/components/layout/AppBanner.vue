@@ -44,6 +44,7 @@ export default {
   data () {
     return {
       settings: {
+        arrows: false,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,

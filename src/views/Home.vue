@@ -17,7 +17,7 @@ export default {
     AppBaner: () => import(/* webpackChunkName: "panel" */'@/components/layout/AppBanner'),
     FavoriteList: () => import(/* webpackChunkName: "favorite" */'@/components/layout/FavoriteList'),
     TopSale: () => import(/* webpackChunkName: "top-sale" */'@/components/layout/TopSale'),
-    IntroduceOwner: () => import(/* webpackChunkName: "owner" */'@/components/layout/IntroduceOwner'),
+    IntroduceOwner: () => import(/* webpackChunkName: "owner" */'@/components/layout/IntroduceOwnerHome'),
     Categoryblah: () => import(/* webpackChinkName: "category" */ '@/components/layout/CategoryBlahBlah')
   },
   data () {

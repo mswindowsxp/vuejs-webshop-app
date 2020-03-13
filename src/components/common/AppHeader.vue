@@ -19,22 +19,20 @@
                         aria-haspopup="true"
                         aria-expanded="false">{{ $t('product') }}</a>
                      <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <router-link tag="a" to="/product-list/tissue" class="dropdown-item">{{ $t('sub-product.tissue')
-                           }}
+                        <router-link tag="a" to="/product-list/tissue" class="dropdown-item">{{ $t('sub-product.tissue') }}
                         </router-link>
-                        <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">{{
-                           $t('sub-product.paper-cup') }}
+                        <router-link tag="a" to="/product-list/paper-cup" class="dropdown-item">{{ $t('sub-product.paper-cup') }}
                         </router-link>
-                        <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">{{
-                           $t('sub-product.bottle-plastic') }}
+                        <router-link tag="a" to="/product-list/bottle-plastic" class="dropdown-item">{{ $t('sub-product.bottle-plastic') }}
                         </router-link>
                         <router-link tag="a" to="/product-list/flour" class="dropdown-item">{{ $t('sub-product.flour')}}
                         </router-link>
                      </div>
                   </li>
-                  <li class="nav-item"><a href="about.html" class="nav-link">{{$t('partner')}}</a></li>
-                  <li class="nav-item"><a href="blog.html" class="nav-link">{{$t('news')}}</a></li>
-                  <li class="nav-item"><a href="contact.html" class="nav-link">{{$t('contact')}}</a></li>
+                  <li class="nav-item"><a href="javascript: void(0)" class="nav-link">{{$t('partner')}}</a></li>
+                  <li class="nav-item"><a href="javascript: void(0)" class="nav-link">{{$t('news')}}</a></li>
+                  <li class="nav-item"><router-link tag="a" to="/about" class="nav-link">{{ $t('about')}} </router-link></li>
+                  <li class="nav-item"><router-link tag="a" to="/contact" class="nav-link">{{ $t('contact')}} </router-link></li>
                   <li class="nav-item">
                      <a href="javascript:void(0)" class="nav-link" @click="loginOrSignUp"> {{$t('login')}}</a>
                   </li>
