@@ -29,7 +29,7 @@
                         </router-link>
                      </div>
                   </li>
-                  <li class="nav-item"><a href="javascript: void(0)" class="nav-link">{{$t('partner')}}</a></li>
+                  <li class="nav-item"><router-link tag="a" to="/about" class="nav-link">{{ $t('partner')}} </router-link></li>
                   <li class="nav-item"><a href="javascript: void(0)" class="nav-link">{{$t('news')}}</a></li>
                   <li class="nav-item"><router-link tag="a" to="/about" class="nav-link">{{ $t('about')}} </router-link></li>
                   <li class="nav-item"><router-link tag="a" to="/contact" class="nav-link">{{ $t('contact')}} </router-link></li>
